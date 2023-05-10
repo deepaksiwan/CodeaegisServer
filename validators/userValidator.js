@@ -8,12 +8,11 @@ const usersignupSchema = Joi.object()
   .required();
   const userloginSchema = Joi.object()
   .keys({
-   
     email: Joi.string().email().required(),
     password: Joi.string().required().max(5),
   })
   .required();
-module.exports = {
+  module.exports = {
   usersignupSchema,
   userloginSchema
 };

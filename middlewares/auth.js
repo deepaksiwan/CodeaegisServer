@@ -33,7 +33,6 @@ const verifyTokenAndUser= (req, res, next) => {
   });
 };
 
-
 module.exports = {
   verifyTokenAndUser,
   verifyToken,
