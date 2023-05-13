@@ -6,6 +6,7 @@ const responseCodes = require("../../utils/responseCodes")
 const responseMessage = require("../../utils/responseMessage");
 
 
+
 exports.UserSignup = async (req, res, next) => {
     let { user_name,email, password } = req.body;
     try{
@@ -54,7 +55,7 @@ exports.UserSignup = async (req, res, next) => {
           process.env.JWT_SECRET,
           { expiresIn: "30d" }
         );
-        res.status(200).json({responseCode:responseCodes.SUCCESS, message: "User is login sucessfully", token:token });
+        res.status(200).json({responseCode:responseCodes.SUCCESS, responseMessage: responseMessage.LOG_IN, token:token });
       }
     } catch (err) {
       res.status(500).json({message: "worng credentils"});
